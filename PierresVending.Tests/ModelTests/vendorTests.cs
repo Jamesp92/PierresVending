@@ -30,5 +30,33 @@ namespace VendorTests.Tests
       //Assert
       Assert.AreEqual(description, result);
     }
+
+     [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      //Arrange
+      string description = "Walk the dog.";
+      Vendor newVendor = new Vendor(description);
+
+      //Act
+      string updatedDescription = "Do the dishes";
+      newVendor.Description = updatedDescription;
+      string result = newVendor.Description;
+
+      //Assert
+      Assert.AreEqual(updatedDescription, result);
+    }
+     [TestMethod]
+    public void GetAll_ReturnsEmptyList_VendorList()
+    {
+      // Arrange
+      List<Vendor> newVendor = new List<Vendor> { };
+
+      // Act
+      List<Vendor> result = Vendor.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(newVendor, result);
+    }
   }
 }
