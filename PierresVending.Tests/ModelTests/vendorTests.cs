@@ -50,13 +50,31 @@ namespace VendorTests.Tests
     public void GetAll_ReturnsEmptyList_VendorList()
     {
       // Arrange
-      List<Vendor> newVendor = new List<Vendor> { };
+      List<Vendor> newList = new List<Vendor> { };
 
       // Act
       List<Vendor> result = Vendor.GetAll();
 
       // Assert
-      CollectionAssert.AreEqual(newVendor, result);
+      CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsVendors_VendorList()
+    {
+      //Arrange
+      string description01 = "Walk the dog";
+      string description02 = "Wash the dishes";
+      Vendor newItem1 = new Vendor(description01);
+      Vendor newItem2 = new Vendor(description02);
+      List<Vendor> newList = new List<Vendor> { newItem1, newItem2 };
+
+      //Act
+      List<Vendor> result = Vendor.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+
   }
 }
