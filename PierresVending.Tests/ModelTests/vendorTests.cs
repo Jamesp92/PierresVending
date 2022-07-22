@@ -3,6 +3,18 @@ using System.Collections.Generic;
 using PierresVending.Models;
 using System;
 
-namespace Vendor.Tests
+namespace VendorTests.Tests
 {
+  [TestClass]
+  public class VendorTests 
+  {
+
+   
+    [TestMethod]
+    public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
+    {
+      Vendor newVendor = new Vendor("test");
+      Assert.AreEqual(typeof(Vendor),newVendor.GetType());
+    }
+  }
 }
