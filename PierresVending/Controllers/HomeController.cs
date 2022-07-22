@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using PierresVending.Models;
 
-namespace ToDoList.Controllers
+namespace HomeController.Controllers
 {
   public class HomeController : Controller
   {
@@ -9,7 +9,7 @@ namespace ToDoList.Controllers
     [Route("/")]
     public ActionResult Index()
     {
-      Item starterItem = new Item("Add first item to To Do List");
+      Vendor starterItem = new Vendor("Add first item to To Do List");
       return View(starterItem);
     }
 
